@@ -1,5 +1,6 @@
 .section {
-	/* max-width: 1600px; */
-	/* margin: 0 auto; */
 	padding: 94px 0;
+	&--no_padding {
+		padding-top: 0;
+	}
 }

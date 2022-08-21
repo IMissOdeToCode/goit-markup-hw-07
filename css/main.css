@@ -14,6 +14,39 @@ h5,
 h6 {
 	margin: 0;
 } */
+:root {
+  /* bc - brand color */
+  --bc-blue: #2196f3;
+  --bc-black: #000000;
+  --bc-light-black: #212121;
+  --bc-gray: #757575;
+  --bc-white: #ffffff;
+  --bc-background: #2f303a;
+  --bc-light_backgroung: #f5f4fa;
+  --bc-header-line: #ececec;
+  --bc-client: #afb1b8;
+  --bc-hero-gradient: rgba(47, 48, 58, 0.4);
+  --bc-semi-white: rgb(255 255 255 / 0.6);
+  --card-set-gap: 30px;
+  --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --TST1: border-color 2000ms var(--timing-function);
+  --TST2: 1000ms var(--timing-function);
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 94px 0;
+}
+.section--no_padding {
+  padding-top: 0;
+}
+
 img {
   display: block;
 }
@@ -46,10 +79,6 @@ body {
   padding: 0;
 }
 
-.no-padding {
-  padding-top: 0;
-}
-
 .transition {
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
@@ -69,38 +98,6 @@ body {
 
 .border-color {
   transition-property: border-color;
-}
-
-:root {
-  /* bc - brand color */
-  --bc-blue: #2196f3;
-  --bc-black: #000000;
-  --bc-light-black: #212121;
-  --bc-gray: #757575;
-  --bc-white: #ffffff;
-  --bc-background: #2f303a;
-  --bc-light_backgroung: #f5f4fa;
-  --bc-header-line: #ececec;
-  --bc-client: #afb1b8;
-  --bc-hero-gradient: rgba(47, 48, 58, 0.4);
-  --bc-semi-white: rgb(255 255 255 / 0.6);
-  --card-set-gap: 30px;
-  --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --TST1: border-color 2000ms var(--timing-function);
-  --TST2: 1000ms var(--timing-function);
-}
-
-.container {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.section {
-  /* max-width: 1600px; */
-  /* margin: 0 auto; */
-  padding: 94px 0;
 }
 
 .site-nav .link.current {
@@ -141,40 +138,51 @@ body {
   margin: -1px;
 }
 
-.main-logo {
-  /* display: flex; */
-  display: inline-block;
-  margin: 0;
-  padding-top: 25px;
-  padding-bottom: 24px;
-}
-
 .logo {
   color: var(--bc-blue);
   font-family: "Raleway";
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
+  display: inline-block;
+  margin: 0;
+  padding-top: 25px;
+  padding-bottom: 24px;
 }
 
-.logo.top {
+.logo--black {
   color: var(--bc-black);
 }
 
-.logo.bot {
+.logo--white {
   color: var(--bc-white);
 }
 
 /* ---------- Studio ---------- */
-/* navigation */
 .site-nav {
   display: flex;
   margin-left: 93px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.site-nav__item {
+  position: relative;
+}
+
+.site-nav__item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .contact-nav {
   display: flex;
   margin-left: auto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
 }
 
 .contact-nav .item .link {
@@ -182,32 +190,13 @@ body {
   align-items: center;
 }
 
-.logo-contact {
-  fill: currentColor;
-  margin-right: 10px;
-}
-
-.site-nav .item + .item {
-  margin-left: 50px;
-}
-
-.site-nav .item {
-  position: relative;
-}
-
-/* .site-nav .item:not(:last-child) {
-	margin-right: 50px;
-} */
 .contact-nav .item + .item {
   margin-left: 50px;
 }
 
-.site-nav,
-.contact-nav {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
+.logo-contact {
+  fill: currentColor;
+  margin-right: 10px;
 }
 
 .site-nav .link {
@@ -229,7 +218,6 @@ body {
 .link:hover,
 .link:focus {
   color: var(--bc-blue);
-  /* fill: var(--bc-blue); */
 }
 
 nav {
@@ -296,35 +284,17 @@ nav {
   border-color: var(--bc-blue);
 }
 
-.features-title {
-  color: var(--bc-black);
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.features-text {
-  font-size: 14px;
-  line-height: 1.71;
-  margin: 0;
-}
-
-.feature-container {
+.feature-set {
   display: flex;
 }
 
-.feature-container .item + .item {
-  margin-left: 30px;
-}
-
-.feature-container .item {
+.feature-item {
   width: 270px;
 }
-
-.feature::before {
+.feature-item:not(:last-child) {
+  margin-right: 30px;
+}
+.feature-item::before {
   content: "";
   display: block;
   height: 120px;
@@ -335,21 +305,33 @@ nav {
   background-repeat: no-repeat;
   background-position: center;
 }
-
-.icon-antenna::before {
+.feature-item--antenna::before {
   background-image: url(../images/antenna.svg);
 }
-
-.icon-clock::before {
+.feature-item--clock::before {
   background-image: url(../images/clock.svg);
 }
-
-.icon-diagram::before {
+.feature-item--diagram::before {
   background-image: url(../images/diagram.svg);
 }
-
-.icon-astronaut::before {
+.feature-item--astronaut::before {
   background-image: url(../images/astronaut.svg);
+}
+
+.feature-item__title {
+  color: var(--bc-black);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.feature-item__text {
+  font-size: 14px;
+  line-height: 1.71;
+  margin: 0;
 }
 
 .section-title {
@@ -362,15 +344,19 @@ nav {
   margin-bottom: 50px;
 }
 
-.we-doing-container {
+.service-set {
   display: flex;
 }
 
-.we-doing-container .item + .item {
-  margin-left: 30px;
+.service-set__item:not(:last-child) {
+  margin-right: 30px;
 }
 
-.item-descr {
+.service-set__thumb {
+  position: relative;
+}
+
+.service-set__descr {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -386,10 +372,6 @@ nav {
   text-transform: uppercase;
   background-color: rgba(47, 48, 58, 0.8);
   color: #ffffff;
-}
-
-.img-thumb {
-  position: relative;
 }
 
 .team-bg {
@@ -478,20 +460,19 @@ nav {
   transition-property: fill;
 }
 
-.clients-set {
+.clients {
   display: flex;
 }
 
-.clients-set .client + .client {
-  margin-left: 30px;
-}
-
-.client {
+.clients__item {
   width: 170px;
   height: 92px;
 }
+.clients__item:not(:last-child) {
+  margin-right: 30px;
+}
 
-.client-link {
+.clients__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -502,14 +483,12 @@ nav {
   color: var(--bc-client);
   transition-property: color, border-color;
 }
-
-.client-link:hover,
-.client-link:focus {
+.clients__link:hover, .clients__link:focus {
   color: var(--bc-blue);
   border-color: var(--bc-blue);
 }
 
-.logo-client {
+.clients__logo {
   fill: currentColor;
   width: 106px;
   height: 60px;

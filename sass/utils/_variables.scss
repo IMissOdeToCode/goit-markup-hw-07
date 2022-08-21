@@ -22,3 +22,10 @@
 	--TST1: border-color 2000ms var(--timing-function);
 	--TST2: 1000ms var(--timing-function);
 }
+
+@mixin font($fw, $fs, $lh, $ls) {
+	font-weight: $fw;
+	font-size: $fs;
+	line-height: $lh;
+	letter-spacing: $ls;
+} ;
